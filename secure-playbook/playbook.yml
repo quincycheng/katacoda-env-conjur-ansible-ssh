@@ -1,4 +1,4 @@
-- hosts: db_servers
+- hosts: demo_servers
   roles:
     - role: cyberark.conjur-lookup-plugin
   vars:
