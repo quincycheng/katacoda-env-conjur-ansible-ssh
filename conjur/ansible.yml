@@ -2,4 +2,4 @@
 - !grant
   role: !layer
 - !host-factory
-  layers: { !layer ansible ]
+  layers: [ !layer ]
