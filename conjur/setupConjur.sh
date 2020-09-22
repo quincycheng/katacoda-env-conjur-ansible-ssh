@@ -12,3 +12,5 @@ docker-compose up -d
 # sleep 10
 # api_key="$(grep API admin.out | cut -d: -f2 | tr -d ' \r\n')"
 # docker-compose exec client conjur authn login -u admin -p "$api_key"
+
+echo "$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' conjur_conjur_1) conjur" >> /etc/hosts
