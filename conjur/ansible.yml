@@ -4,9 +4,3 @@
 - !host-factory
   layers: [ !layer ]
 
-- !permit
-  role: !layer 
-  privileges: 
-    - execute
-    - read
-  resource: !host-factory
