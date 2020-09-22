@@ -1,11 +1,9 @@
 - hosts: demo_servers
-  roles:
-    - role: cyberark.conjur-lookup-plugin
   vars:
       ansible_connection: ssh      
-      ansible_host: "{{ lookup('retrieve_conjur_variable', 'server/' + inventory_hostname+ '/host') }}"
-      ansible_user: "{{ lookup('retrieve_conjur_variable', 'server/' + inventory_hostname+ '/user') }}"
-      ansible_ssh_pass: "{{ lookup('retrieve_conjur_variable', 'server/' + inventory_hostname+ '/pass') }}"
+      ansible_host: "{{ lookup('conjur_variable', 'server/' + inventory_hostname+ '/host') }}"
+      ansible_user: "{{ lookup('conjur_variable', 'server/' + inventory_hostname+ '/user') }}"
+      ansible_ssh_pass: "{{ lookup('conjur_variable', 'server/' + inventory_hostname+ '/pass') }}"
 
   tasks:
     - name: Get user name
