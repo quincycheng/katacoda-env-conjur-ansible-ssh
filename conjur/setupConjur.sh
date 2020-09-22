@@ -5,8 +5,8 @@ docker-compose pull
 docker-compose run --no-deps --rm conjur data-key generate > data_key
 export CONJUR_DATA_KEY="$(< data_key)"
 docker-compose up -d 
-sleep 15
-docker-compose exec conjur conjurctl account create demo | tee admin.out
+#sleep 15
+#docker-compose exec conjur conjurctl account create demo | tee admin.out
 #docker-compose exec client bash -c "echo yes | conjur init -u $1 -a demo"
 
 # sleep 10
